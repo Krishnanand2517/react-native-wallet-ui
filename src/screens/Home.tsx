@@ -6,8 +6,13 @@ import {Container} from '../components/shared';
 import {colors} from '../components/colors';
 import logo1 from '../../assets/cards/mc.png';
 import logo2 from '../../assets/cards/visa_white.png';
+import portrait1 from '../../assets/portraits/1.jpg';
+import portrait2 from '../../assets/portraits/2.jpg';
+import portrait3 from '../../assets/portraits/3.jpg';
+
 import CardSection from '../components/Cards/CardSection';
 import TransactionSection from '../components/Transactions/TransactionSection';
+import SendMoneySection from '../components/SendMoney/SendMoneySection';
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -76,11 +81,36 @@ const Home: React.FC = () => {
     },
   ];
 
+  const sendMoneyData = [
+    {
+      id: 1,
+      amount: '₹ 2000',
+      name: 'Ramesh',
+      background: colors.tertiary,
+      img: portrait1,
+    },
+    {
+      id: 2,
+      amount: '₹ 650',
+      name: 'Satyam',
+      background: colors.primary,
+      img: portrait2,
+    },
+    {
+      id: 3,
+      amount: '₹ 1200',
+      name: 'Rahman',
+      background: colors.accent,
+      img: portrait3,
+    },
+  ];
+
   return (
     <HomeContainer>
       <StatusBar />
       <CardSection data={cardsData} />
       <TransactionSection data={transactionData} />
+      <SendMoneySection data={sendMoneyData} />
     </HomeContainer>
   );
 };
