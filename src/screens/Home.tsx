@@ -7,6 +7,7 @@ import {colors} from '../components/colors';
 import logo1 from '../../assets/cards/mc.png';
 import logo2 from '../../assets/cards/visa_white.png';
 import CardSection from '../components/Cards/CardSection';
+import TransactionSection from '../components/Transactions/TransactionSection';
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -39,10 +40,47 @@ const Home: React.FC = () => {
     },
   ];
 
+  const transactionData = [
+    {
+      id: 1,
+      amount: '-₹581.00',
+      date: '12 Mar 2024',
+      title: 'Taxi',
+      subTitle: 'Uber',
+      art: {
+        background: colors.primary,
+        icon: 'car',
+      },
+    },
+    {
+      id: 2,
+      amount: '-₹810.00',
+      date: '28 Feb 2024',
+      title: 'Shopping',
+      subTitle: 'Amazon',
+      art: {
+        background: colors.tertiary,
+        icon: 'cart',
+      },
+    },
+    {
+      id: 3,
+      amount: '-₹1805.00',
+      date: '16 Feb 2024',
+      title: 'Travel',
+      subTitle: 'IRCTC',
+      art: {
+        background: colors.accent,
+        icon: 'airplane',
+      },
+    },
+  ];
+
   return (
     <HomeContainer>
       <StatusBar />
       <CardSection data={cardsData} />
+      <TransactionSection data={transactionData} />
     </HomeContainer>
   );
 };
