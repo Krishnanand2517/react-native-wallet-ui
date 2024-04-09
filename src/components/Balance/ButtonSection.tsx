@@ -6,6 +6,7 @@ import {colors} from '../colors';
 
 const ButtonSectionBackground = styled.View`
   width: 100%;
+  justify-content: flex-end;
   align-items: center;
   flex: 1;
 `;
@@ -14,7 +15,8 @@ const ButtonSection: React.FC = () => {
   return (
     <ButtonSectionBackground>
       <RegularButton btnStyles={{width: '50%'}} onPress={() => {}}>
-        Cancel <Ionicons name="card" size={17} color={colors.white} />
+        Cancel Card{'     '}
+        <Ionicons name="card" size={17} color={colors.white} />
       </RegularButton>
     </ButtonSectionBackground>
   );

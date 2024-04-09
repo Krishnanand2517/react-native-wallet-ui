@@ -56,7 +56,7 @@ const RootStack: React.FC = () => {
           options={{
             headerTitle: props => (
               <Greeting
-                mainText="Hey Krish!"
+                mainText="Hey Boss!"
                 subText="Welcome back"
                 {...props}
               />

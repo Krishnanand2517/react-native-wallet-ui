@@ -111,7 +111,7 @@ const Home: React.FC<HomeScreenProps> = () => {
 
   return (
     <HomeContainer>
-      <StatusBar />
+      <StatusBar backgroundColor={colors.graylight} barStyle="dark-content" />
       <CardSection data={cardsData} />
       <TransactionSection data={transactionData} />
       <SendMoneySection data={sendMoneyData} />

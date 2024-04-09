@@ -43,7 +43,7 @@ type WelcomeScreenProps = StackScreenProps<RootStackParamsList, 'Welcome'>;
 const Welcome: React.FC<WelcomeScreenProps> = ({navigation}) => {
   return (
     <>
-      <StatusBar />
+      <StatusBar backgroundColor={colors.primary} barStyle="light-content" />
       <WelcomeContainer>
         <TopSection>
           <TopImage source={background} />

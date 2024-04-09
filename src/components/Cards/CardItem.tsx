@@ -12,7 +12,7 @@ import RegularText from '../Texts/RegularText';
 import SmallText from '../Texts/SmallText';
 
 const CardBackground = styled.ImageBackground`
-  height: 75%;
+  height: 100%;
   width: ${ScreenWidth * 0.67}px;
   resize-mode: cover;
   background-color: ${colors.accent};

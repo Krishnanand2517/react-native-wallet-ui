@@ -21,7 +21,7 @@ type BalanceScreenProps = StackScreenProps<RootStackParamsList, 'Balance'>;
 const Balance: React.FC<BalanceScreenProps> = ({route}) => {
   return (
     <BalanceContainer>
-      <StatusBar />
+      <StatusBar backgroundColor={colors.graylight} barStyle="dark-content" />
       <AmountSection balance={route?.params?.balance} />
       <BalanceCard {...route?.params} />
       <ButtonSection />

@@ -8,7 +8,7 @@ import RegularText from '../Texts/RegularText';
 import SmallText from '../Texts/SmallText';
 
 const CardBackground = styled.ImageBackground`
-  height: 75%;
+  height: 100%;
   width: 100%;
   resize-mode: cover;
   background-color: ${colors.accent};
@@ -39,26 +39,29 @@ const Logo = styled.Image`
 
 const BalanceCard: React.FC<BalanceCardProps> = props => {
   return (
-    <CardBackground source={card_bg}>
-      <TouchableView>
-        <CardRow>
-          <RegularText textStyles={{color: colors.white}}>
-            ****** {props?.accountNo?.slice(6, 10)}
-          </RegularText>
-        </CardRow>
-        <CardRow>
-          <View style={{flex: 3}}>
-            <SmallText textStyles={{marginBottom: 5, color: colors.graylight}}>
-              Total Balance
-            </SmallText>
-            <RegularText textStyles={{fontSize: 19}}>
-              {props.balance}
+    <View style={{height: '45%'}}>
+      <CardBackground source={card_bg}>
+        <TouchableView>
+          <CardRow>
+            <RegularText textStyles={{color: colors.white}}>
+              ****** {props?.accountNo?.slice(6, 10)}
             </RegularText>
-          </View>
-          <Logo source={props.logo} />
-        </CardRow>
-      </TouchableView>
-    </CardBackground>
+          </CardRow>
+          <CardRow>
+            <View style={{flex: 3}}>
+              <SmallText
+                textStyles={{marginBottom: 5, color: colors.graylight}}>
+                Total Balance
+              </SmallText>
+              <RegularText textStyles={{fontSize: 19}}>
+                {props.balance}
+              </RegularText>
+            </View>
+            <Logo source={props.logo} />
+          </CardRow>
+        </TouchableView>
+      </CardBackground>
+    </View>
   );
 };
 
