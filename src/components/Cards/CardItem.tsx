@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
+import {HomeScreenProps} from '../../screens/Home';
 import {CardProps} from './types';
 import {ScreenWidth} from '../shared';
 import {colors} from '../colors';
@@ -45,7 +48,11 @@ const Logo = styled.Image`
 `;
 
 const CardItem: React.FC<CardProps> = props => {
-  const handlePress = () => {};
+  const navigation = useNavigation<HomeScreenProps['navigation']>();
+
+  const handlePress = () => {
+    navigation.navigate('Balance', {...props});
+  };
 
   return (
     <CardBackground source={card_bg}>

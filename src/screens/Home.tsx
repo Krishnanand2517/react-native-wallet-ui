@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {StatusBar} from 'react-native';
+import {StackScreenProps} from '@react-navigation/stack';
 
+import {RootStackParamsList} from '../navigators/RootStack';
 import {Container} from '../components/shared';
 import {colors} from '../components/colors';
 import logo1 from '../../assets/cards/mc.png';
@@ -20,7 +22,9 @@ const HomeContainer = styled(Container)`
   flex: 1;
 `;
 
-const Home: React.FC = () => {
+export type HomeScreenProps = StackScreenProps<RootStackParamsList, 'Home'>;
+
+const Home: React.FC<HomeScreenProps> = () => {
   const cardsData = [
     {
       id: 1,

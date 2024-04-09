@@ -1,7 +1,9 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
 import styled from 'styled-components/native';
+import {StackScreenProps} from '@react-navigation/stack';
 
+import {RootStackParamsList} from '../navigators/RootStack';
 import {Container} from '../components/shared';
 import {colors} from '../components/colors';
 
@@ -36,7 +38,9 @@ const BottomSection = styled.View`
   justify-content: flex-end;
 `;
 
-const Welcome: React.FC = () => {
+type WelcomeScreenProps = StackScreenProps<RootStackParamsList, 'Welcome'>;
+
+const Welcome: React.FC<WelcomeScreenProps> = ({navigation}) => {
   return (
     <>
       <StatusBar />
@@ -53,7 +57,12 @@ const Welcome: React.FC = () => {
             Best payment method, connects your money to your friends, family
           </SmallText>
 
-          <RegularButton onPress={() => {}}>Get Started</RegularButton>
+          <RegularButton
+            onPress={() => {
+              navigation.navigate('Home');
+            }}>
+            Get Started
+          </RegularButton>
         </BottomSection>
       </WelcomeContainer>
     </>
